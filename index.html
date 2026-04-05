@@ -2,238 +2,49 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Tư vấn da - Bác sĩ Lan
- Test</title>
+    <title>Tư vấn da - Bác sĩ Lan</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: radial-gradient(circle at top left, #d8b4fe 0%, #c084fc 40%, #7c3aed 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 28px;
-            width: min(420px, 100%);
-            box-shadow: 0 30px 80px rgba(124, 58, 237, 0.2);
-            padding: 32px;
-            border: 1px solid rgba(255,255,255,0.6);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        .header h1 {
-            font-size: 32px;
-            color: #5b21b6;
-            margin-bottom: 8px;
-        }
-        .header p {
-            color: #6b21a8;
-            opacity: 0.85;
-        }
-        .input-group {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #f8f0ff;
-            border: 1px solid #e9d5ff;
-            border-radius: 14px;
-            padding: 10px 14px;
-            margin-bottom: 14px;
-        }
-        .input-group span {
-            font-size: 18px;
-            color: #7c3aed;
-        }
-        .input-group input {
-            border: none;
-            outline: none;
-            width: 100%;
-            background: transparent;
-            font-size: 15px;
-            color: #2d0260;
-        }
-        .input-group input::placeholder {
-            color: #7c3aed;
-            opacity: 0.8;
-        }
-        .btn-row {
-            display: flex;
-            gap: 12px;
-            margin-top: 8px;
-        }
-        .btn {
-            flex: 1;
-            border: none;
-            border-radius: 14px;
-            padding: 14px 0;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .btn:hover { transform: translateY(-1px); }
-        .btn-primary {
-            background: linear-gradient(135deg, #7c3aed, #c084fc);
-            color: white;
-            box-shadow: 0 16px 35px rgba(124, 58, 237, 0.25);
-        }
-        .btn-secondary {
-            background: white;
-            color: #7c3aed;
-            border: 1px solid #d8b4fe;
-        }
-        .list-title {
-            margin: 28px 0 12px;
-            color: #5b21b6;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        .ket-qua-item {
-            background: #ffffff;
-            border: 1px solid rgba(124, 58, 237, 0.12);
-            border-radius: 18px;
-            padding: 16px 18px;
-            margin-bottom: 12px;
-            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.08);
-        }
-        .ket-qua-item strong {
-            color: #4c1d95;
-        }
-        .ket-qua-item small {
-            color: #6b21a8;
-            opacity: 0.75;
-        }
-        .loai-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 12px;
-            border-radius: 999px;
-            font-size: 13px;
-            font-weight: 700;
-            margin-left: 8px;
-        }
-        .gay { background: #e0f2fe; color: #0369a1; }
-        .binh-thuong { background: #dcfce7; color: #166534; }
-        .thua-can { background: #fef3c7; color: #92400e; }
-        .beo-phi { background: #fee2e2; color: #b91c1c; }
-        .empty {
-            color: #7c3aed;
-            opacity: 0.8;
-            margin-top: 12px;
-            text-align: center;
-        }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .card { background: white; border-radius: 20px; padding: 35px; width: 400px; }
+        h2 { text-align: center; color: #667eea; margin-bottom: 25px; font-size: 26px; }
+        input { width: 100%; padding: 12px 15px; margin: 8px 0; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 15px; outline: none; }
+        input:focus { border-color: #667eea; }
+        .btn-tinh { width: 100%; padding: 13px; margin-top: 15px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .btn-xoa { width: 100%; padding: 10px; margin-top: 8px; background: none; color: #999; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; cursor: pointer; }
+        .ket-qua-item { background: #f7f7ff; border-left: 4px solid #667eea; border-radius: 8px; padding: 10px 15px; margin-top: 10px; font-size: 15px; }
     </style>
 </head>
 <body>
 <div class="card">
-    <div class="header">
-        <h1><💜 Tư vấn da - Bác sĩ Lan/h2>
-        <p>Nhập thông tin để xem phân loại và lưu tự động</p>
-    </div>
-
-    <div class="input-group">
-        <span>👤</span>
-        <input id="ten" type="text" placeholder="Nhập tên">
-    </div>
-    <div class="input-group">
-        <span>⚖️</span>
-        <input id="canNang" type="number" step="0.1" placeholder="Cân nặng (kg)">
-    </div>
-    <div class="input-group">
-        <span>📏</span>
-        <input id="chieuCao" type="number" step="0.01" placeholder="Chiều cao (m), ví dụ 1.60">
-    </div>
-
-    <div class="btn-row">
-        <button class="btn btn-primary" onclick="tinhBMI()">Tính BMI</button>
-        <button class="btn btn-secondary" onclick="xoa()">Xóa</button>
-    </div>
-
-    <div class="list-title">Lịch sử BMI</div>
-    <div id="danh-sach"></div>
+    <h2>💜 Tư vấn da - Bác sĩ Lan</h2>
+    <input type="text" id="ten" placeholder="Nhập tên khách hàng">
+    <input type="number" id="canNang" placeholder="Cân nặng (kg)">
+    <input type="number" id="chieuCao" placeholder="Chiều cao (m), vd: 1.60">
+    <button class="btn-tinh" onclick="tinhBMI()">Tính BMI</button>
+    <button class="btn-xoa" onclick="xoa()">Xóa toàn bộ</button>
+    <div id="danh-sach" style="margin-top:10px"></div>
 </div>
-
 <script>
-function layDanhSach() {
-    return JSON.parse(localStorage.getItem('bmiRecords') || '[]');
-}
-
-function luuDanhSach(records) {
-    localStorage.setItem('bmiRecords', JSON.stringify(records));
-}
-
-function phanLoai(bmi) {
-    if (bmi < 18.5) return { text: 'Gầy', className: 'gay' };
-    if (bmi < 23) return { text: 'Bình thường', className: 'binh-thuong' };
-    if (bmi < 25) return { text: 'Thừa cân', className: 'thua-can' };
-    return { text: 'Béo phì', className: 'beo-phi' };
-}
-
+let danhSach = JSON.parse(localStorage.getItem("bmiList")) || [];
 function tinhBMI() {
-    const ten = document.getElementById('ten').value.trim();
-    const canNang = Number(document.getElementById('canNang').value);
-    const chieuCao = Number(document.getElementById('chieuCao').value);
-
-    if (!ten || !canNang || !chieuCao || canNang <= 0 || chieuCao <= 0) {
-        alert('Vui lòng nhập đầy đủ tên, cân nặng và chiều cao hợp lệ.');
-        return;
-    }
-
-    const bmi = canNang / (chieuCao * chieuCao);
-    const loai = phanLoai(bmi);
-    const moiBang = {
-        ten,
-        bmi: bmi.toFixed(2),
-        loai: loai.text,
-        loaiClass: loai.className,
-        thoiGian: new Date().toLocaleString('vi-VN')
-    };
-
-    const records = layDanhSach();
-    records.unshift(moiBang);
-    luuDanhSach(records);
-    hienThiDanhSach();
-
-    document.getElementById('ten').value = '';
-    document.getElementById('canNang').value = '';
-    document.getElementById('chieuCao').value = '';
+    let ten = document.getElementById("ten").value.trim();
+    let canNang = parseFloat(document.getElementById("canNang").value);
+    let chieuCao = parseFloat(document.getElementById("chieuCao").value);
+    if (!ten || !canNang || !chieuCao) { alert("Nhập đầy đủ thông tin!"); return; }
+    let bmi = canNang / (chieuCao * chieuCao);
+    let loai = bmi < 18.5 ? "Gầy" : bmi < 23 ? "Bình thường" : bmi < 25 ? "Thừa cân" : "Béo phì";
+    danhSach.push(ten + " - BMI: " + bmi.toFixed(2) + " - " + loai);
+    localStorage.setItem("bmiList", JSON.stringify(danhSach));
+    hienThi();
 }
-
-function hienThiDanhSach() {
-    const records = layDanhSach();
-    const container = document.getElementById('danh-sach');
-    if (!records.length) {
-        container.innerHTML = '<div class="empty">Chưa có bản ghi nào. Hãy nhập và tính BMI ngay.</div>';
-        return;
-    }
-
-    container.innerHTML = records.map(record => `
-        <div class="ket-qua-item">
-            <div><strong>${record.ten}</strong></div>
-            <div>BMI: <strong>${record.bmi}</strong> <span class="loai-tag ${record.loaiClass}">${record.loai}</span></div>
-            <div><small>${record.thoiGian}</small></div>
-        </div>
-    `).join('');
+function hienThi() {
+    document.getElementById("danh-sach").innerHTML = danhSach.map(i => '<div class="ket-qua-item">' + i + '</div>').join("");
 }
-
 function xoa() {
-    if (confirm('Bạn có chắc muốn xóa toàn bộ lịch sử BMI?')) {
-        localStorage.removeItem('bmiRecords');
-        hienThiDanhSach();
-    }
+    localStorage.removeItem("bmiList"); danhSach = []; hienThi();
 }
-
-hienThiDanhSach();
+hienThi();
 </script>
 </body>
-
 </html>
-
-</html>
-
